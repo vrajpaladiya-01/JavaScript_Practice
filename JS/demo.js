@@ -1,15 +1,14 @@
-for(let j=1; j<=3; j++){
-    for(let k=1; k<=2; k++){
-        console.log(j, k);
-    }
-}
+let a;
+let b;
 
-for(let i=0; i<=3; i++){
-    console.log(i);
-}
+let fv = prompt("Enter the first number ");
+let sv = prompt("Enter the second number ");
 
-let n = 7;
-while (n<=10) {
-    console.log(n);
-    n++;
-}
+a = parseInt(fv);
+b = parseInt(sv);
+
+let sum = a + b;
+
+window.alert(sum);
+console.log(sum);
+document.write(sum);
