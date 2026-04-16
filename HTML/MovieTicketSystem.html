@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Movie Ticket</title>
+    <link rel="stylesheet" href="../CSS/MovieicketSystem.css">
+</head>
+<body>
+    <div class="container">
+    <h2>🎬 Ticket Booking</h2>
+
+    <input type="text" id="name" placeholder="Enter Name">
+    <input type="number" id="age" placeholder="Enter Age">
+
+    <select id="showTime">
+        <option value="">Select Show Time</option>
+        <option value="morning">Morning</option>
+        <option value="afternoon">Afternoon</option>
+        <option value="evening">Evening</option>
+    </select>
+
+    <select id="seatType">
+        <option value="">Select Seat Type</option>
+        <option value="silver">Silver</option>
+        <option value="gold">Gold</option>
+        <option value="platinum">Platinum</option>
+    </select>
+
+    <input type="number" id="tickets" placeholder="Number of Tickets">
+
+    <button onclick="bookTicket()">Book Now</button>
+
+    <div class="result" id="result"></div>
+</div>
+</body>
+<script src="../JS/MovieTicketSystem.js"></script>
+</html>

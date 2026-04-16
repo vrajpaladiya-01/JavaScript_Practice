@@ -4,13 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conditions</title>
+    <link rel="stylesheet" href="../CSS/Condition.css">
 </head>
 <body>
-    <h1>Java Script Conditions</h1>
-    <form action="marksheet">
-        <label for="nm">Subject 1</label>
-        
+    <!-- <h1>Java Script Conditions</h1> -->
+    <form onsubmit="marksheet(); return false;">
+
+        <h3>Marksheet</h3>
+
+        <label for="name">Name</label>
+        <input type="text" id="nm" placeholder="Enter your name"> <br> <br>
+
+        <label for="maths">Maths</label>
+        <input type="number" id="sub1" placeholder="Maths Mark"> <br> <br>
+
+        <label for="CHEM">Chemistry</label>
+        <input type="number" id="sub2" placeholder="Chemistry Mark"> <br> <br>
+
+        <label for="PHY">Physics</label>
+        <input type="number" id="sub3" placeholder="Physics Mark"> <br> <br>
+
+        <label for="ENG">English</label>
+        <input type="number" id="sub4" placeholder="English Mark"> <br> <br>
+
+        <label for="COMP">Computer</label>
+        <input type="number" id="sub5" placeholder="Computer Mark"> <br> <br>
+
+        <button type="submit">Submit</button>
     </form>
+    
+    <div id="result"></div>
 </body>
 <script src="../JS/Condition.js"></script>
 </html>

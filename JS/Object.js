@@ -61,3 +61,5 @@ const classInfo1 = [
         city: "Pune"
     }
 ]
+
+console.log(Math.floor(Math.random() * 10) + 1);
