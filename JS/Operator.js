@@ -48,6 +48,7 @@ const quantity = 5;
 const discount = 10;
 const gst = 18;
 
+const str = price.toString();
 const tbill = price * quantity;
 const bill = tbill*discount/100;
 
@@ -55,6 +56,8 @@ const total = tbill - bill;
 const tgst = total * gst / 100;
 const final = total + tgst;
 
+console.log(str);
+console.log(typeof str);
 console.log(bill);
 console.log(total);
 console.log(final);

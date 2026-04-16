@@ -43,30 +43,30 @@
 
 // Remove Element
 
-// let arr1 = [1, 2, 3, 4, 5, 6, 2, 3];
-// let num = 2;
+let arr1 = [1, 2, 3, 4, 5, 6, 2, 3];
+let num = 2;
 
-// for(let i=0; i<arr1.length; i++){
-//     if(arr1[i] == num){
-//         arr1.splice(i, 1);
-//     }
-// }
+for(let i=0; i<arr1.length; i++){
+    if(arr1[i] == num){
+        arr1.splice(i, 1);
+    }
+}
 
-// console.log(arr1);
+console.log(arr1);
 
 
 // Count Digit
 
-// let number = 287152;
-// let count = 0;
+let number = 287152;
+let count = 0;
 
-// let copy = number;
+let copy = number;
 
-// while(copy > 0){
-//     count++;
-//     copy = Math.floor(copy/10);
-// }
-// console.log(count);
+while(copy > 0){
+    count++;
+    copy = Math.floor(copy/10);
+}
+console.log(count);
 
 
 
@@ -97,7 +97,7 @@
 //     fact = fact * i;
 // }
 
-// console.log(fact);
+// console.log("Factorial of " + n +" : " + fact);
 
 
 
@@ -113,4 +113,4 @@
 //     }
 // }
 
-// console.log(Largest);
+// console.log("Largest number is : " + Largest);
