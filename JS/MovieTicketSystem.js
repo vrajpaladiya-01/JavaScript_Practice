@@ -8,13 +8,11 @@ function bookTicket() {
 
     let result = document.getElementById("result");
 
-    // Validation
     if (!name || age <= 0 || tickets <= 0 || !showTime || !seatType) {
         result.innerHTML = "❌ Please enter all valid details";
         return;
     }
 
-    // Seat Pricing (switch)
     let price;
 
     switch (seatType) {
@@ -32,10 +30,8 @@ function bookTicket() {
             return;
     }
 
-    // Base Total
     let baseTotal = price * tickets;
 
-    // Show Discount
     let showDiscount = 0;
 
     if (showTime === "morning") {
@@ -46,13 +42,10 @@ function bookTicket() {
         showDiscount = 0;
     }
 
-    // Final Calculation
     let finalAmount = baseTotal - (baseTotal * showDiscount);
 
-    // Booking Type
     let bookingType = tickets > 5 ? "Group Booking" : "Regular Booking";
 
-    // Output
     result.innerHTML = `
         <b>Hello ${name}</b><br><br>
         Seat Type: ${seatType}<br>
