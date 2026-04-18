@@ -1,4 +1,3 @@
-/* Reset default margin & padding */
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +5,6 @@
     font-family: Arial, sans-serif;
 }
 
-/* Body styling */
 body {
     height: 100vh;
     background: linear-gradient(to right, #4facfe, #00f2fe);
@@ -15,7 +13,6 @@ body {
     align-items: center;
 }
 
-/* Main container */
 .container {
     background: #fff;
     padding: 30px;
@@ -25,13 +22,11 @@ body {
     text-align: center;
 }
 
-/* Heading */
 .container h1 {
     margin-bottom: 20px;
     color: #333;
 }
 
-/* Input fields */
 .container input {
     width: 100%;
     padding: 10px;
@@ -42,12 +37,10 @@ body {
     transition: 0.3s;
 }
 
-/* Input focus effect */
 .container input:focus {
     border-color: #4facfe;
 }
 
-/* Button */
 .container button {
     width: 100%;
     padding: 10px;
@@ -60,12 +53,10 @@ body {
     font-size: 16px;
 }
 
-/* Button hover */
 .container button:hover {
     background: #007bff;
 }
 
-/* Result message box */
 .ans {
     margin-top: 15px;
     padding: 10px;
