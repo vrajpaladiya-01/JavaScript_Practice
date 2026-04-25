@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Management System</title>
+  <link rel="stylesheet" href="../CSS/cha.css">
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Registration -->
+  <div id="registerSection">
+    <h2>Register</h2>
+
+    <input type="text" id="name" placeholder="Enter Name">
+    <p class="error" id="nameError"></p>
+
+    <input type="text" id="email" placeholder="Enter Email">
+    <p class="error" id="emailError"></p>
+
+    <input type="password" id="password" placeholder="Enter Password">
+    <p class="error" id="passwordError"></p>
+
+    <input type="number" id="age" placeholder="Enter Age">
+    <p class="error" id="ageError"></p>
+
+    <button onclick="registerUser()">Register</button>
+  </div>
+
+  <!-- Login -->
+  <div id="loginSection" class="hidden">
+    <h2>Login</h2>
+
+    <input type="text" id="loginEmail" placeholder="Enter Email">
+    <p class="error" id="loginEmailError"></p>
+
+    <input type="password" id="loginPassword" placeholder="Enter Password">
+    <p class="error" id="loginPasswordError"></p>
+
+    <button onclick="loginUser()">Login</button>
+  </div>
+
+  <!-- Menu -->
+  <div id="menuSection" class="hidden">
+    <h2>Dashboard</h2>
+
+    <button onclick="showProfile()">Show Profile</button>
+    <button onclick="updateUser()">Update Profile</button>
+    <button onclick="deleteProperty()">Delete Property</button>
+    <button onclick="textAnalysis()">Text Analysis</button>
+    <button class="exit" onclick="exitApp()">Exit</button>
+
+    <div id="output"></div>
+  </div>
+
+</div>
+
+<script src="../JS/cha.js"></script>
+</body>
+</html>

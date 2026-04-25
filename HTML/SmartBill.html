@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Smart Billing System</title>
+  <link rel="stylesheet" href="../CSS/SmartBill.css">
+</head>
+<body>
+
+<div class="container">
+
+  <h2>Smart Billing System</h2>
+
+  <!-- Add Product -->
+  <div class="section">
+    <input type="text" id="name" placeholder="Product Name">
+    <input type="text" id="price" placeholder="Price">
+    <input type="text" id="quantity" placeholder="Quantity">
+    <p class="error" id="productError"></p>
+    <button onclick="addProduct()">Add Product</button>
+  </div>
+
+  <!-- Menu -->
+  <div class="section">
+    <button onclick="calculateBill()">Calculate Bill</button>
+    <button onclick="showBill()">Show Bill</button>
+    <button class="exit" onclick="exitApp()">Exit</button>
+  </div>
+
+  <!-- Output -->
+  <div id="output"></div>
+
+</div>
+
+<script src="../JS/SmartBill.js"></script>
+</body>
+</html>

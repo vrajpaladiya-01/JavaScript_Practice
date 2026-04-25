@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        /* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body - Center everything */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    padding: 20px;
+}
+
+/* Title */
+h1 {
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-size: 26px;
+    letter-spacing: 1px;
+}
+
+/* Inputs */
+input {
+    width: 300px;
+    padding: 12px;
+    margin: 6px 0;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+/* Input focus effect */
+input:focus {
+    outline: none;
+    border-color: #5a67d8;
+    box-shadow: 0 0 0 3px rgba(90, 103, 216, 0.2);
+    transform: translateY(-1px);
+}
+
+/* Button */
+button {
+    width: 300px;
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 10px;
+    background: #5a67d8;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Button hover */
+button:hover {
+    background: #434190;
+    transform: translateY(-2px);
+}
+
+/* Button click */
+button:active {
+    transform: scale(0.97);
+}
+
+/* Result box */
+#ans {
+    width: 300px;
+    margin-top: 15px;
+    padding: 12px;
+    min-height: 40px;
+    background: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    font-size: 14px;
+    color: #333;
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Responsive */
+@media (max-width: 400px) {
+    input,
+    button,
+    #ans {
+        width: 100%;
+    }
+}
+    </style>
+</head>
+
+<body>
+
+    <h1>Registration Form</h1>
+
+    <input type="text" id="nm" placeholder="Enter your full name">
+    <br><br>
+
+    <input type="email" id="mail" placeholder="Enter your email">
+    <br><br>
+
+    <input type="password" id="pw" placeholder="Enter your password">
+    <br><br>
+
+    <input type="text" id="str" placeholder="Enter string for analysis">
+    <br><br>
+
+    <button onclick="submit()">Submit</button>
+
+    <br><br>
+
+    <div id="ans"></div>
+
+    <!-- JS File Link -->
+    <script src="../JS/Practce.js"></script>
+
+</body>
+</html>

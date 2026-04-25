@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Utility App</title>
+  <link rel="stylesheet" href="../CSS/UtilityHub.css">
+</head>
+<body>
+
+<div class="container">
+  <h2>Smart Utility App</h2>
+
+  <!-- LOGIN SECTION -->
+  <input type="text" id="email" placeholder="Enter Email">
+  <input type="password" id="password" placeholder="Enter Password">
+
+  <button onclick="login()">Submit</button>
+
+  <!-- MAIN MENU (hidden initially) -->
+  <div id="mainMenu" style="display:none;">
+
+    <h3>Main Menu</h3>
+
+    <input type="text" id="input1" placeholder="Input 1">
+    <input type="text" id="input2" placeholder="Input 2 (optional)">
+    <input type="text" id="operator" placeholder="Operator (+,-,*,/)">
+
+    <button onclick="runOption(1)">1. Format Name</button>
+    <button onclick="runOption(2)">2. Validate Email</button>
+    <button onclick="runOption(3)">3. Check Password</button>
+    <button onclick="runOption(4)">4. Analyze Text</button>
+    <button onclick="runOption(5)">5. Calculator</button>
+    <button onclick="exitApp()">6. Exit</button>
+
+  </div>
+
+  <div class="output" id="output"></div>
+</div>
+
+<script src="../JS/UtilityHub.js"></script>
+</body>
+</html>
