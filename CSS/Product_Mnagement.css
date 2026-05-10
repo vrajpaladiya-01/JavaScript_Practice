@@ -1,0 +1,23 @@
+/* Custom styles to complement Bootstrap */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card {
+    border: none;
+    border-radius: 8px;
+}
+
+.card-header {
+    font-weight: 600;
+    border-radius: 8px 8px 0 0 !important;
+}
+
+/* Smooth transitions for table rows */
+tbody tr {
+    transition: background-color 0.2s ease-in-out;
+}
+
+#messageBox {
+    transition: opacity 0.3s ease-in-out;
+}

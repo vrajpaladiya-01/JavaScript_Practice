@@ -60,9 +60,32 @@ function calSum(a, b){
     console.log(sum1);
 }
 calSum(2, 4);
-console.log(sum1);
+// console.log(sum1);
 
 
+const student = {
+    name: "Aman",
+    marks: 90,
+    prop: this,
+    getName: function(){
+        console.log(this);
+        return this.name;
+    },
+    getMarks: () => {
+        console.log(this);
+        return this.marks;
+    },
+    getInfo1: function() {
+        setTimeout(() => {
+            console.log(this);
+        }, 2000);
+    },
+    getInfo2: function() {
+        setTimeout(function() {
+            console.log(this);
+        }, 2000);
+    }
+};
 
 
 // console.log(sum(10));

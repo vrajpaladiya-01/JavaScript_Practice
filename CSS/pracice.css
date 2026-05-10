@@ -1,0 +1,30 @@
+/* style.css */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth; /* મેનુ પર ક્લિક કરવાથી સ્મૂથ સ્ક્રોલિંગ માટે */
+}
+
+/* હીરો સેક્શન (બેનર) ની સ્ટાઇલ */
+.hero-section {
+    /* અહીં તમે અસલી પિઝાના ફોટાની લિંક મૂકી શકો છો */
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+    height: 80vh; /* સ્ક્રીનનો 80% ભાગ રોકશે */
+    min-height: 400px;
+}
+
+/* પિઝા કાર્ડ પર માઉસ લઈ જતાં ઇફેક્ટ */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2) !important;
+}
+
+/* બટન હોવર ઇફેક્ટ */
+.btn-outline-danger:hover {
+    background-color: #dc3545;
+    color: white;
+}

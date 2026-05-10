@@ -1,112 +1,97 @@
-function submit() {
-    const name = document.getElementById("nm").value.trim().toUpperCase();
-    const email = document.getElementById("mail").value.trim().toLowerCase();
-    const pass = document.getElementById("pw").value.trim();
-    const string = document.getElementById("str").value.trim();
-    const result = document.getElementById("ans");
+// ==========================================
+// 🍕 VS PIZZA HUT: FOOD ORDER SYSTEM
+// ==========================================
 
-    let strlen = string.length;
-    let rev = "";
-    let vowels = 0;
+// ------------------------------------------
+// 👉 PART 1: CALLBACK IMPLEMENTATION
+// ------------------------------------------
 
-    // Count vowels
-    for (let ch of string.toLowerCase()) {
-        if ("aeiou".includes(ch)) {
-            vowels++;
-        }
-    }
+function placeOrder(item, callback) {
+  // Basic Validation: જો આઇટમ ખાલી હોય તો
+  if (!item || item.trim() === "") {
+    console.log("Invalid Order");
+    return; // ઓર્ડર પ્રોસેસ નહીં થાય
+  }
 
-    // Word count
-    let words = string === "" ? 0 : string.split(" ").length;
-
-    // Password must contain at least 1 number
-    let hasNumber = /\d/.test(pass);    
-
-    // Validation
-    if (!name || !email || !pass || !string) {
-        result.innerHTML = "❌ Please fill all details";
-        return;
-    }
-
-    if (!email.includes("@gmail.com") || email.includes(" ")) {
-        result.innerHTML = "❌ Invalid Email";
-        return;
-    }
-
-    if (pass.length < 8 || pass.includes(" ") || !hasNumber) {
-        result.innerHTML = "❌ Password must be 8+ chars & contain 1 number";
-        return;
-    }
-
-    // Reverse string
-    for (let i = string.length - 1; i >= 0; i--) {
-        rev += string[i];
-    }
-
-    // Output
-    result.innerHTML = `
-        <b>Hello ${name}</b> 👋 <br><br>
-        ✅ Email Verified <br>
-        🔐 Password: Strong <br><br>
-
-        <b>Sentence Analysis:</b><br>
-        🔤 Characters: ${strlen} <br>
-        📝 Words: ${words} <br>
-        🔡 Vowels: ${vowels} <br>
-        🔁 Reverse: ${rev} <br><br>
-
-        <button onclick="showMenu()">Menu</button>
-    `;
+  // 2 સેકન્ડનો ડીલે
+  setTimeout(() => {
+    console.log(`Order Placed for ${item} at VS Pizza Hut`);
+    callback(item);
+  }, 2000); 
 }
 
-// MENU FUNCTION
-function showMenu() {
-    let str = document.getElementById("str").value;
-    let choice;
-
-    do {
-        choice = Number(prompt(
-            "Menu:\n" +
-            "1. Convert to Uppercase\n" +
-            "2. Convert to Lowercase\n" +
-            "3. Replace a word\n" +
-            "4. Check word exists\n" +
-            "5. Exit\n\n" +
-            "Enter choice:"
-        ));
-
-        switch (choice) {
-            case 1:
-                alert("Uppercase: " + str.toUpperCase());
-                break;
-
-            case 2:
-                alert("Lowercase: " + str.toLowerCase());
-                break;
-
-            case 3:
-                let oldWord = prompt("Enter word to replace:");
-                let newWord = prompt("Enter new word:");
-                str = str.replace(oldWord, newWord);
-                alert("Updated String: " + str);
-                break;
-
-            case 4:
-                let checkWord = prompt("Enter word to check:");
-                if (str.includes(checkWord)) {
-                    alert("✅ Word exists");
-                } else {
-                    alert("❌ Word not found");
-                }
-                break;
-
-            case 5:
-                alert("Exit...");
-                break;
-
-            default:
-                alert("Invalid choice");
-        }
-
-    } while (choice !== 5);
+function prepareOrder(item, callback) {
+  // 3 સેકન્ડનો ડીલે
+  setTimeout(() => {
+    console.log(`Preparing ${item}...`);
+    callback(item);
+  }, 3000); 
 }
+
+function deliverOrder(item) {
+  // 2 સેકન્ડનો ડીલે
+  setTimeout(() => {
+    console.log(`${item} Delivered 🚀`);
+  }, 2000); 
+}
+
+// --- Callback Execution Flow ---
+console.log("--- Starting Callback Flow ---");
+
+// ખાલી આઇટમ ચેક કરવા (આનાથી "Invalid Order" પ્રિન્ટ થશે)
+// placeOrder("", (item) => { prepareOrder(item, (item) => { deliverOrder(item); }); });
+
+placeOrder("Pizza", (item) => {
+  prepareOrder(item, (item) => {
+    deliverOrder(item);
+  });
+});
+
+
+// ------------------------------------------
+// 👉 PART 2: PROMISE IMPLEMENTATION
+// ------------------------------------------
+
+function placeOrderPromise(item) {
+  return new Promise((resolve) => {
+    // Basic Validation
+    if (!item || item.trim() === "") {
+      console.log("Invalid Order");
+      return; // .catch() નો ઉપયોગ નથી કરવાનો એટલે માત્ર return કર્યું છે
+    }
+
+    setTimeout(() => {
+      console.log(`Order Placed for ${item} at VS Pizza Hut`);
+      resolve(item);
+    }, 2000);
+  });
+}
+
+function prepareOrderPromise(item) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      console.log(`Preparing ${item}...`);
+      resolve(item);
+    }, 3000);
+  });
+}
+
+function deliverOrderPromise(item) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      console.log(`${item} Delivered 🚀`);
+      resolve(item); // ભવિષ્યમાં આગળ ચેઇનિંગ કરવું હોય તો 
+    }, 2000);
+  });
+}
+
+// --- Promise Execution Flow ---
+// Callback ફ્લો પૂરો થાય (લગભગ 7 સેકન્ડ) ત્યારબાદ Promise ફ્લો શરૂ થાય તે માટે મેં તેને setTimeout માં મૂક્યું છે.
+setTimeout(() => {
+  console.log("\n--- Starting Promise Flow ---");
+  
+  placeOrderPromise("Pizza")
+    .then((item) => prepareOrderPromise(item))
+    .then((item) => deliverOrderPromise(item));
+
+}, 8000);

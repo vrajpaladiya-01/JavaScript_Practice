@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar */
+.navbar {
+    padding: 15px 30px;
+    background-color: white !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Left Side Links */
+.navbar-brand {
+    color: black !important;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.navbar-brand:hover {
+    color: blue !important;
+}
+
+/* Right Side */
+.d-flex {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Icons */
+.fa-cart-arrow-down,
+.fa-address-book {
+    font-size: 22px;
+    color: black;
+    transition: 0.3s;
+}
+
+.fa-cart-arrow-down:hover,
+.fa-address-book:hover {
+    color: blue;
+}
+
+/* Button */
+button {
+    padding: 6px 15px !important;
+}

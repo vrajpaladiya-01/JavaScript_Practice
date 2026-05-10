@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Marks Manager</title>
+  <link rel="stylesheet" href="../CSS/Marks_Manager.css">
+</head>
+<body>
+
+<div class="container">
+  <h2>Student Marks Manager</h2>
+
+  <!-- Add Mark -->
+  <div class="section">
+    <input type="text" id="markInput" placeholder="Enter mark (0-100)">
+    <p class="error" id="error"></p>
+    <button onclick="addMark()">Add Mark</button>
+  </div>
+
+  <!-- Menu Buttons -->
+  <div class="section">
+    <button onclick="viewMarks()">View Marks</button>
+    <button onclick="removeMark()">Remove Last Mark</button>
+    <button onclick="findMark()">Find Mark</button>
+    <button onclick="showResult()">Show Result</button>
+    <button class="exit" onclick="exitApp()">Exit</button>
+  </div>
+
+  <!-- Output -->
+  <div id="output"></div>
+</div>
+
+<script src="../JS/Marks_Manager.js"></script>
+</body>
+</html>
