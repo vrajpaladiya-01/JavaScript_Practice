@@ -1,50 +1,225 @@
-* {
+/* =========================================
+            GOOGLE FONT
+========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* =========================================
+            GLOBAL CSS
+========================================= */
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Navbar */
-.navbar {
-    padding: 15px 30px;
-    background-color: white !important;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+body{
+    font-family: "Poppins", sans-serif;
+    background: #f5f7fb;
+    overflow-x: hidden;
+    padding-top: 95px; /* Body Space For Fixed Navbar */
 }
 
-/* Left Side Links */
-.navbar-brand {
-    color: black !important;
-    text-decoration: none;
-    margin-right: 20px;
-    font-size: 18px;
+/* =========================================
+            NAVBAR
+========================================= */
+.navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    padding: 15px 40px;
+    background: #ffffff !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.navbar-brand{
+    font-size: 28px;
+    font-weight: 700;
+    color: #111827 !important;
+    letter-spacing: 0.5px;
+}
+
+.nav-link{
+    font-size: 16px;
+    font-weight: 500;
+    color: #374151 !important;
+    transition: 0.3s ease;
+}
+
+.nav-link:hover{
+    color: #0d6efd !important;
+}
+
+/* =========================================
+            SEARCH INPUT & BUTTON
+========================================= */
+.form-control{
+    border-radius: 30px !important;
+    padding: 12px 18px;
+    border: 1px solid #d1d5db;
+    box-shadow: none !important;
+}
+
+.form-control:focus{
+    border-color: #0d6efd;
+}
+
+.btn-primary{
+    border-radius: 30px;
+    padding: 10px 24px;
     font-weight: 500;
 }
 
-.navbar-brand:hover {
-    color: blue !important;
-}
-
-/* Right Side */
-.d-flex {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-/* Icons */
+/* =========================================
+            ICONS
+========================================= */
 .fa-cart-arrow-down,
-.fa-address-book {
-    font-size: 22px;
-    color: black;
-    transition: 0.3s;
+.fa-address-book{
+    font-size: 24px;
+    color: #111827;
+    transition: 0.3s ease;
 }
 
 .fa-cart-arrow-down:hover,
-.fa-address-book:hover {
-    color: blue;
+.fa-address-book:hover{
+    color: #0d6efd;
 }
 
-/* Button */
-button {
-    padding: 6px 15px !important;
+#cartCount{
+    font-size: 11px;
+    padding: 5px 7px;
+}
+
+/* =========================================
+            PRODUCT SECTION & CARDS
+========================================= */
+.container{
+    margin-top: 30px;
+}
+
+.card{
+    border: none;
+    border-radius: 18px;
+    overflow: hidden;
+    background: #ffffff;
+    transition: 0.3s ease;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    height: 100%;
+}
+
+.card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.card img{
+    height: 220px;
+    object-fit: contain;
+    padding: 20px;
+    background: #ffffff;
+}
+
+.card-body{
+    padding: 18px;
+}
+
+.card-title{
+    font-size: 18px;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 10px;
+}
+
+.text-muted{
+    font-size: 14px;
+}
+
+.text-primary{
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.add-cart-btn{
+    border: none;
+    border-radius: 30px;
+    padding: 10px;
+    font-weight: 500;
+    background: #198754;
+    transition: 0.3s ease;
+}
+
+.add-cart-btn:hover{
+    background: #157347;
+}
+
+/* =========================================
+            DROPDOWNS (CATEGORY & SORT)
+========================================= */
+#categorySelect,
+#sortSelect {
+    border-radius: 12px;
+    padding: 10px 14px;
+    border: 1px solid #d1d5db;
+    font-weight: 500;
+    cursor: pointer;
+    background-color: #fff;
+    color: #333;
+}
+
+#categorySelect:focus,
+#sortSelect:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* =========================================
+            PAGINATION
+========================================= */
+#prevBtn,
+#nextBtn{
+    padding: 10px 22px;
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+.pagination-space{
+    margin-bottom: 50px;
+}
+
+#pageNumber{
+    color: #111827;
+}
+
+/* =========================================
+            RESPONSIVE DESIGN
+========================================= */
+@media(max-width: 992px){
+    .navbar{
+        padding: 15px 20px;
+    }
+    .navbar-collapse{
+        margin-top: 15px;
+    }
+}
+
+@media(max-width: 768px){
+    .navbar-brand{
+        font-size: 22px;
+    }
+    .card img{
+        height: 180px;
+    }
+}
+
+@media(max-width: 576px){
+    body{
+        padding-top: 110px;
+    }
+    .form-control{
+        font-size: 14px;
+    }
+    .btn-primary{
+        padding: 8px 18px;
+    }
 }

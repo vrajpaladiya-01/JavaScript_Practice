@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern JS Dashboard</title>
+    <!-- <link rel="stylesheet" href="../CSS/Demo_Pracical2.css"> -->
+</head>
+
+<body>
+
+    <h1>JavaScript User & Product Dashboard</h1>
+
+    <div id="status"></div>
+
+    <div id="login-section" style="display: none;">
+
+        <h2>Login Account</h2>
+        <div>
+            <label>Username :</label>
+            <input type="text" id="username" placeholder="Enter Username">
+        </div>
+        <br>
+        <div>
+            <label>Password :</label>
+            <input type="password" id="password" placeholder="Enter Password">
+        </div>
+        <br>
+
+        <button id="login-btn">Login</button>
+
+    </div>
+
+    <div id="dashboard-section" style="display: none;">
+
+        <div class="user-box" style="border: 1px solid #ccc; padding: 15px; margin-bottom: 20px;">
+
+            <h3>User Profile</h3>
+            <div id="user-profile"></div><br>
+            <button id="logout-btn">Logout</button>
+
+        </div>
+
+        <div class="search-box" style="border: 1px solid #ccc; padding: 15px; margin-bottom: 20px;">
+
+            <h3>Search & Filter</h3>
+            <input type="text" id="search-input" placeholder="Search Products">
+            <button id="search-btn">Search</button><br><br>            
+
+            <label>Select Category :</label>
+            <select id="category-select">
+                <option value="">All Categories</option>
+            </select>
+
+        </div>
+
+        <div id="single-product-section" style="display: none; border: 1px solid #ccc; padding: 15px; margin-bottom: 20px;">
+            <h3>Product Details</h3>
+            <button id="close-btn">Close</button>
+            <div id="single-product"></div>
+        </div>
+
+        <div class="products-box" style="border: 1px solid #ccc; padding: 15px;">
+            <h3>All Products</h3>
+            <div id="products-container"></div>
+        </div>
+
+    </div>
+
+    <script src="../JS/Demo_Practical2.js"></script>
+
+</body>
+
+</html>

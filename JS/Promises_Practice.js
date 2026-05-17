@@ -1,34 +1,56 @@
 let h1 = document.querySelector("h1");
 
-function changeColor(color, delay){
+function changeColor(color, delay) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
+            let num = Math.floor(Math.random() * 5) + 1;
+            if (num > 3) {
+                reject("Something went wrong");
+            }
             h1.style.color = color;
             resolve("Color change");
         }, delay);
     });
 }
 
-changeColor("red", 1000)
-.then(() => {
-    console.log("change to red");
-    return changeColor("orange", 1000);
-})
-.then(() => {
-    console.log("Change to orange");
-    return changeColor("lightgreen", 1000);
-})
-.then(() => {
-    console.log("Change to lightgreen");
-    return changeColor("green", 1000);
-})
-.then(() => {
-    console.log("Change to green");
-    return changeColor("blue", 1000);
-})
-.then(() => {
-    console.log("Change to blue");
-});
+async function demo() {
+    try {
+        await changeColor("red", 1000);
+        await changeColor("green", 1000);
+        await changeColor("yellow", 1000);
+        await changeColor("purple", 1000);
+        await changeColor("pink", 1000);
+        changeColor("lightgreen", 1000);
+    } catch(err){
+        console.log(err);
+    }
+
+    let a = 5;
+    console.log(a);
+    console.log(a + 3);
+}
+
+// changeColor("red", 1000)
+// .then(() => {
+//     console.log("change to red");
+//     return changeColor("orange", 1000);
+// })
+// .then(() => {
+//     console.log("Change to orange");
+//     return changeColor("lightgreen", 1000);
+// })
+// .then(() => {
+//     console.log("Change to lightgreen");
+//     return changeColor("green", 1000);
+// })
+// .then(() => {
+//     console.log("Change to green");
+//     return changeColor("blue", 1000);
+// })
+// .then(() => {
+//     console.log("Change to blue");
+// });
+
 // function saveDB(data, success, failure){
 //     let internetSpeed = Math.floor(Math.random() * 10 + 1);
 
@@ -68,7 +90,7 @@ changeColor("red", 1000)
 
 
 
-//Nested callback 
+//Nested callback
 
 // saveDB("Gujrat")
 //     .then(() => {
